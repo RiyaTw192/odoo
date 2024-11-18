@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "434630448561",
+    "project_id": "oddo-469a4",
+    "storage_bucket": "oddo-469a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434630448561:android:1b24f5bce9aa850478d990",
+        "android_client_info": {
+          "package_name": "com.example.oddo_fe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3NXy5q2FfnZQLlJ-NHTV_rwBbGrE5MWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

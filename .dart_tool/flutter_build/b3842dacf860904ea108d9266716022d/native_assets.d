@@ -1,0 +1,1 @@
+ /Users/apple/Documents/odoo_new/.dart_tool/flutter_build/b3842dacf860904ea108d9266716022d/native_assets.yaml: 
