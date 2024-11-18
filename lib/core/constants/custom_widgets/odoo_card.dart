@@ -1,50 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:oddo_fe/core/constants/app_colors.dart';
-class OdooScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
 
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: [
-            TaskCard(
-              title: "iOS app deployment",
-              subtitle: "SO056 - Booqio V2",
-              deadline: "Deadline 07/20/2023",
-              time: "00:30",
-            ),
-            TaskCard(
-              title: "iOS app deployment with odd",
-              subtitle: "SO056 - Booqio V2",
-              deadline: "Deadline 07/20/2023",
-              time: "00:30",
-            ),
-            TaskCard(
-              title: "iOS app deployment with odd",
-              subtitle: "SO056 - Booqio V2",
-              deadline: "Deadline 07/20/2023",
-              time: "00:30",
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+class OdooCard extends StatelessWidget {
+  String? title;
+  String? subtitle;
+  String? deadline;
+  String? time;
+  void Function()? onPressed;
+  Widget? icon;
 
-class TaskCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final String deadline;
-  final String time;
-
-  TaskCard({
-    required this.title,
-    required this.subtitle,
-    required this.deadline,
-    required this.time,
+  OdooCard({super.key,
+    this.title,
+    this.subtitle,
+    this.deadline,
+    this.time,
+    this.onPressed,
+    this.icon
   });
 
   @override
@@ -56,77 +27,79 @@ class TaskCard extends StatelessWidget {
       color: AppColors.cardColor,
       elevation: 5,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(12.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    VerticalDivider(
-                      width: 20,
-                      thickness: 1,
-                      indent: 20,
-                      endIndent: 0,
-                      color: AppColors.yellowColor,
-                    ),
-                    Icon(
-                      Icons.star_border,
-                      color: Colors.white,
-                    ),
-                    SizedBox(width: 8),
-                    Text(
-                      title,
-                      style: TextStyle(
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                     const Icon(
+                        Icons.star_border,
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 8),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.work_outline,
-                      color: Colors.white70,
-                      size: 16,
-                    ),
-                    SizedBox(width: 4),
-                    Text(
-                      subtitle,
-                      style: TextStyle(
+                     const SizedBox(width: 8),
+                      Text(
+                        title ?? "",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                     const Icon(
+                        Icons.work_outline,
                         color: Colors.white70,
-                        fontSize: 14,
+                        size: 16,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 8),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_today_outlined,
-                      color: Colors.white70,
-                      size: 16,
-                    ),
-                    SizedBox(width: 4),
-                    Text(
-                      deadline,
-                      style: TextStyle(
+                     const SizedBox(width: 4),
+                      Text(
+                        subtitle ?? "",
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height:18),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.calendar_today_outlined,
                         color: Colors.white70,
-                        fontSize: 14,
+                        size: 16,
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      const SizedBox(width: 4),
+                      Text(
+                        deadline ?? "",
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            Spacer(),
+            // Spacer(),
             Container(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
@@ -134,14 +107,14 @@ class TaskCard extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    time,
-                    style: TextStyle(
+                    time ?? "",
+                    style: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 8),
-                  Icon(Icons.pause, color: Colors.black),
+                  // const SizedBox(width: 8),
+                  IconButton(onPressed: onPressed, icon: icon ?? const Icon(Icons.pause))
                 ],
               ),
             ),
