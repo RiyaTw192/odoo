@@ -34,7 +34,8 @@ class _TimesheetScreenState extends State<TimesheetScreen> {
           ),
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppDimen.SIZE_12, vertical: AppDimen.SIZE_20),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: AppDimen.SIZE_12, vertical: AppDimen.SIZE_20),
               child: Column(
                 children: [
                   CustomAppBar(
@@ -45,33 +46,26 @@ class _TimesheetScreenState extends State<TimesheetScreen> {
                     height: AppDimen.SIZE_20,
                   ),
                   customTabBar(
-                      context,
-                      favouriteTab: Padding(
-                        padding: const EdgeInsets.only(top: AppDimen.SIZE_100),
-                        child: CustomImageContainer(
-                          image: AppDrawable.favouriteImage,
-                          text: AppStrings.favText,
-                          subText:AppStrings.favSubText ,
-                        ),
+                    context,
+                    favouriteTab: Padding(
+                      padding: const EdgeInsets.only(top: AppDimen.SIZE_100),
+                      child: CustomImageContainer(
+                        image: AppDrawable.favouriteImage,
+                        text: AppStrings.favText,
+                        subText: AppStrings.favSubText,
                       ),
-                      oddoTab:OdooScreen(),
-                      // Padding(
-                      //   padding: const EdgeInsets.only(top: AppDimen.SIZE_100),
-                      //   child: CustomImageContainer(
-                      //     image: AppDrawable.odooImage,
-                      //     text: AppStrings.odooText,
-                      //     subText:AppStrings.odooSubText ,
-                      //   ),
-                      // ),
-                      localTab: Padding(
-                        padding: const EdgeInsets.only(top: AppDimen.SIZE_100),
-                        child: CustomImageContainer(
-                          image: AppDrawable.timerImage,
-                          text: AppStrings.localText,
-                          subText:AppStrings.localSubText ,
-                        ),
+                    ),
+                    oddoTab: OdooScreen(),
+                    localTab: Padding(
+                      padding: const EdgeInsets.only(top: AppDimen.SIZE_100),
+                      child: CustomImageContainer(
+                        image: AppDrawable.timerImage,
+                        text: AppStrings.localText,
+                        subText: AppStrings.localSubText,
                       ),
-                  ) ],
+                    ),
+                  )
+                ],
               ),
             ),
           ),

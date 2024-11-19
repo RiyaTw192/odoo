@@ -47,7 +47,7 @@ dependencies:
   equatable:
   go_router: ^9.0.3
   flutter_svg: ^2.0.10+1
-  flutter_background_service:
+#  flutter_background_service:
 
 dev_dependencies:
   flutter_test:

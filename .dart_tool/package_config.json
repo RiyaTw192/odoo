@@ -128,30 +128,6 @@
       "languageVersion": "3.3"
     },
     {
-      "name": "flutter_background_service",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/flutter_background_service-5.0.10",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
-      "name": "flutter_background_service_android",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/flutter_background_service_android-6.2.7",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
-      "name": "flutter_background_service_ios",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/flutter_background_service_ios-5.0.3",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
-      "name": "flutter_background_service_platform_interface",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/flutter_background_service_platform_interface-5.1.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
       "name": "flutter_bloc",
       "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/flutter_bloc-8.1.6",
       "packageUri": "lib/",
@@ -494,7 +470,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-18T06:45:34.675752Z",
+  "generated": "2024-11-18T09:45:20.279609Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/apple/Documents/flutter",

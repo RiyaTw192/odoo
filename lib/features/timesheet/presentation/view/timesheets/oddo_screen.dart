@@ -13,10 +13,7 @@ class OdooScreen extends StatelessWidget {
     String formatTime(int seconds) {
       final int minutes = seconds ~/ 60;
       final int remainingSeconds = seconds % 60;
-      final String formattedMinutes = minutes.toString().padLeft(2, '0');
-      final String formattedSeconds =
-          remainingSeconds.toString().padLeft(2, '0');
-      return '$formattedMinutes:$formattedSeconds';
+      return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
     }
 
     return BlocProvider(
@@ -24,7 +21,8 @@ class OdooScreen extends StatelessWidget {
       child: BlocBuilder<TimeSheetBloc, TimeSheetState>(
         builder: (context, state) {
           if (state.isLoading) {
-            return const Center(child: Center(child: CircularProgressIndicator()));
+            return const Center(
+                child: Center(child: CircularProgressIndicator()));
           }
           return Scaffold(
               body: Padding(
@@ -33,13 +31,7 @@ class OdooScreen extends StatelessWidget {
                       itemCount: state.tasks.length,
                       itemBuilder: (context, index) {
                         final task = state.tasks[index];
-/*
-                        final taskTime = task['isRunning']
-                            ? formatTime(state
-                                .elapsedSeconds)
-                            : task['time'];*/
-                        final taskTime = formatTime(state
-                            .elapsedSeconds);
+                        final taskTime = formatTime(state.elapsedSeconds);
 
                         return OdooCard(
                           title: task['title'],

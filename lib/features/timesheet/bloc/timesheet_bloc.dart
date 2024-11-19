@@ -11,67 +11,66 @@ class TimeSheetBloc extends Bloc<TimeSheetEvent, TimeSheetState> {
 
   TimeSheetBloc() : super(TimeSheetState.initial()) {
 
-    _initializePreferences();
     // Timer events
     on<TimerStarted>(_onStarted);
     on<TimerPaused>(_onPaused);
     on<TimerTicked>(_onTicked);
+    on<TimerReset>(_onReset);
+    _loadElapsedSeconds();
 
     // Task events
     on<OddoList>(_onFetchTasks);
     on<OdooToggleList>(_onToggleTask);
   }
 
-  // Initialize SharedPreferences when the BLoC is created
-  Future<void> _initializePreferences() async {
-    _prefs = await SharedPreferences.getInstance();
-    add(OddoList());
+  Future<void> _loadElapsedSeconds() async {
+    final prefs = await SharedPreferences.getInstance();
+    final elapsed = prefs.getInt('elapsedSeconds') ?? 0;
+    emit(state.copyWith(elapsedSeconds: elapsed));
+  }
+
+  Future<void> _saveElapsedSeconds(int seconds) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('elapsedSeconds', seconds);
   }
 
   void _onStarted(TimerStarted event, Emitter<TimeSheetState> emit) {
     emit(state.copyWith(isRunning: true));
-
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
-      add(TimerTicked(state.elapsedSeconds + 1));
+      add(TimerTicked());
     });
-
-    // Save the running state and elapsed time
-    _prefs?.setBool('isRunning', true);
-    _prefs?.setInt('elapsedSeconds', state.elapsedSeconds);
   }
 
   void _onPaused(TimerPaused event, Emitter<TimeSheetState> emit) {
     _timer?.cancel();
     emit(state.copyWith(isRunning: false));
-
-    // Save the paused state and elapsed time
-    _prefs?.setBool('isRunning', false);
-    _prefs?.setInt('elapsedSeconds', state.elapsedSeconds);
   }
-  void _onTicked(TimerTicked event, Emitter<TimeSheetState> emit) {
-    emit(state.copyWith(elapsedSeconds: event.elapsedSeconds));
 
-    // Update the stored elapsed time
-    _prefs?.setInt('elapsedSeconds', event.elapsedSeconds);
+  void _onReset(TimerReset event, Emitter<TimeSheetState> emit) async {
+    _timer?.cancel();
+    await _saveElapsedSeconds(0);
+    emit(TimeSheetState.initial());
+  }
+
+  void _onTicked(TimerTicked event, Emitter<TimeSheetState> emit) {
+    final newElapsed = state.elapsedSeconds + 1;
+    _saveElapsedSeconds(newElapsed);
+    emit(state.copyWith(elapsedSeconds: newElapsed));
   }
 
   // Odoo Task-related handlers
   void _onFetchTasks(OddoList event, Emitter<TimeSheetState> emit) {
     final tasks = [
       {
-        'title': "iOS app deployment",
+        'title': "iOS app deployme nt",
         'subtitle': "SO056 - Booqio V2",
         'deadline': "Deadline 07/20/2023",
         'time': "00:00",
         'isRunning': false,
       },
-      // {
-      //   'title': "UI Design review",
-      //   'subtitle': "SO057 - WebApp V1",
-      //   'deadline': "Deadline 07/25/2023",
-      //   'time': "00:00",
-      //   'isRunning': false,
-      // },
+
+
+
     ];
 
     // Retrieve previously stored state for the timer
