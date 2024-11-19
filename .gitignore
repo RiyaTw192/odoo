@@ -6,6 +6,11 @@
 # Node artifact files
 node_modules/
 dist/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.idea
+.dart_tool
 
 # Compiled Java class files
 *.class
