@@ -584,6 +584,7 @@ class AppDimen {
   static BorderRadiusGeometry BORDER_7 = BorderRadius.circular(7);
   static BorderRadiusGeometry BORDER_9 = BorderRadius.circular(9);
   static BorderRadiusGeometry BORDER_10 = BorderRadius.circular(10);
+  static BorderRadiusGeometry BORDER_12 = BorderRadius.circular(12);
   static BorderRadiusGeometry BORDER_16 = BorderRadius.circular(16);
   static BorderRadiusGeometry BORDER_20 = BorderRadius.circular(20);
   static BorderRadiusGeometry BORDER_25 = BorderRadius.circular(25);
