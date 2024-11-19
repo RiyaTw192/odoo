@@ -18,4 +18,14 @@ class AppStrings {
   static const String localSubText = 'Create a timer to to begin tracking time';
   static const String odooText = 'You don’t have any odoo timesheets';
   static const String odooSubText = 'Synchronize with odoo to get started';
+  //Setting Screen
+  static const String theme = 'Theme';
+  static const String lightTheme = 'Light theme';
+  static const String darkTheme = 'Dark theme';
+  static const String synchronizations = 'Synchronizations';
+  static const String syncNewOdooAccount = 'Sync new Odoo account';
+  static const String github = 'Github';
+  static const String syncNewGitHubAccount = 'Sync new GitHub account';
+  static const String privacyPolicy = 'Privacy Policy';
+  static const String termsOfService = 'Terms of Service';
 }

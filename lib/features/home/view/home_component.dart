@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:oddo_fe/features/setting/view/setting_screen.dart';
 import '../../../config/theme/app_theme/theme_bloc.dart';
 import '../../../config/theme/app_theme/theme_state.dart';
 import '../../../core/constants/app_colors.dart';
@@ -86,7 +87,7 @@ class _HomeComponentState extends State<HomeComponent> {
           case 1:
             return const Center(child: Text('Projects Screen'));
           case 2:
-            return const Center(child: Text('Setting Screen'));
+            return SettingScreen();
           default:
             return const Center(child: Text('Unknown Screen'));
         }
