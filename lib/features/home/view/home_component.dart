@@ -28,16 +28,7 @@ class _HomeComponentState extends State<HomeComponent> {
           case 0:
             return SingleChildScrollView(
               child: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      AppColors.gradient1,
-                      AppColors.gradient2,
-                    ],
-                  ),
-                ),
+                decoration: themeState.backgroundDecoration,
                 child: SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -87,7 +78,7 @@ class _HomeComponentState extends State<HomeComponent> {
           case 1:
             return const Center(child: Text('Projects Screen'));
           case 2:
-            return SettingScreen();
+            return const SettingScreen();
           default:
             return const Center(child: Text('Unknown Screen'));
         }

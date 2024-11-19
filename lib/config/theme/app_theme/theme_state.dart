@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ThemeState {
   final ThemeData themeData;
-  final bool isDarkMode;
+  final BoxDecoration backgroundDecoration;
 
-  ThemeState({required this.themeData, required this.isDarkMode});
+  ThemeState({required this.themeData, required this.backgroundDecoration});
 }
+
