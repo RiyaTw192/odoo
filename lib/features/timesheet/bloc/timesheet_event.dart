@@ -6,20 +6,12 @@ class TimerStarted extends TimeSheetEvent {}
 
 class TimerPaused extends TimeSheetEvent {}
 
-class TimerTicked extends TimeSheetEvent {
-  final int elapsedSeconds;
+class TimerTicked extends TimeSheetEvent {}
 
-  TimerTicked(this.elapsedSeconds);
-}
+class TimerReset extends TimeSheetEvent {}
 
 // Task List Event
 class OddoList extends TimeSheetEvent {}
-
-// class ToggleTask extends TimeSheetEvent {
-//   final int taskIndex;
-//
-//   ToggleTask(this.taskIndex);
-// }
 
 class OdooToggleList extends TimeSheetEvent {
   final int taskIndex;
@@ -29,4 +21,3 @@ class OdooToggleList extends TimeSheetEvent {
   @override
   List<Object?> get props => [taskIndex];
 }
-
