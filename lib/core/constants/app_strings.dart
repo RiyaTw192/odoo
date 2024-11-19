@@ -28,4 +28,12 @@ class AppStrings {
   static const String syncNewGitHubAccount = 'Sync new GitHub account';
   static const String privacyPolicy = 'Privacy Policy';
   static const String termsOfService = 'Terms of Service';
+  static const String url = 'url';
+  static const String smallEmail = 'email';
+
+  //Home Screen
+  static const String favourites = 'Favourites';
+  static const String local = 'Local';
+
+
 }
