@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/auth/login_screen.dart';
+import '../../features/timesheet/presentation/view/create_timer.dart';
 import '../../features/timesheet/presentation/view/timesheets/timesheet_screen.dart';
 
 class AppRoutes {
@@ -23,6 +24,12 @@ class AppRoutes {
             path: 'timesheet',
             builder: (BuildContext context, GoRouterState state) {
               return const TimesheetScreen();
+            },
+          ),
+          GoRoute(
+            path: 'createTimer',
+            builder: (BuildContext context, GoRouterState state) {
+              return  CreateTimerScreen();
             },
           ),
         ],

@@ -9,8 +9,9 @@ class CustomAppBar extends StatelessWidget {
   IconData? leadingIcon;
   bool? isBoxIcon ;
   IconData? icon;
+  Function() ? iconOnTap;
 
-  CustomAppBar({super.key, this.title, this.icons, this.leadingIcon,this.isBoxIcon,this.icon});
+  CustomAppBar({super.key, this.title, this.icons, this.leadingIcon,this.isBoxIcon,this.icon,this.iconOnTap});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
             icon: Icon(
               leadingIcon,
               size: AppDimen.SIZE_30,
-              color: AppColors.primaryColor,
+              color: AppColors.whiteColor,
             ),
           )
         else
@@ -47,10 +48,13 @@ class CustomAppBar extends StatelessWidget {
         if ((icons?.isEmpty ?? true) && !(isBoxIcon??false))
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: AppDimen.PADDING_10),
-            child: Icon(
-              icon, // Show the passed icon here
-              size: AppDimen.SIZE_30,
-              color: AppColors.primaryColor,
+            child: InkWell(
+              onTap: iconOnTap,
+              child: Icon(
+                icon, // Show the passed icon here
+                size: AppDimen.SIZE_30,
+                color: AppColors.whiteColor,
+              ),
             ),
           )
         else if ((icons?.isNotEmpty ?? false) && (isBoxIcon??false))
@@ -68,7 +72,7 @@ class CustomAppBar extends StatelessWidget {
                   child: Icon(
                     iconItem,
                     size: AppDimen.SIZE_30,
-                    color: AppColors.primaryColor,
+                    color: AppColors.whiteColor,
                   ),
                 ),
               ),

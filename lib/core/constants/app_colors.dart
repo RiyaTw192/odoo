@@ -23,6 +23,7 @@ class AppColors {
   static Color darkSyncBoxBgColor = const Color(0xFF4d4d4d);
   static Color settingBoxColor = const Color(0xFF2e51b3);
   static Color darkBlue = const Color(0xFF233976);
+  static Color borderColor = const Color(0xFF364a7f);
   static const LinearGradient primaryGradientLight = LinearGradient(
     colors: [
       Color(0xFF0C1D4D),
