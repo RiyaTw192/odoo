@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:oddo_fe/features/setting/view/setting_screen.dart';
 import '../../../config/theme/app_theme/theme_bloc.dart';
 import '../../../config/theme/app_theme/theme_state.dart';
@@ -37,7 +38,10 @@ class _HomeComponentState extends State<HomeComponent> {
                       children: [
                         CustomAppBar(
                           title: AppStrings.timeSheets,
-                          icons: const [Icons.add],
+                          icon: Icons.add,
+                          iconOnTap: (){
+                            context.go('/createTimer');
+                          },
                         ),
                         const SizedBox(
                           height: AppDimen.SIZE_20,

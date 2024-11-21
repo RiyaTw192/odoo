@@ -35,5 +35,18 @@ class AppStrings {
   static const String favourites = 'Favourites';
   static const String local = 'Local';
 
+  //Create Timer Screen
+  static const String createTimer = 'Create Timer';
+  static const String project = 'Project';
+  static const String task = 'Task';
+  static const String description = 'Description';
+  static const String makeFavorite = 'Make Favorite';
+  static const String timerCreated = 'Timer Created';
+  static const String timerCreatedText = 'Your timer has been created successfully!';
+  static const String oK = 'OK';
+  static const String fillAllFields = 'Please fill in all fields!';
+
+
+
 
 }
