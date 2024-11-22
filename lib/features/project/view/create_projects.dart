@@ -188,7 +188,7 @@ class _CreateProjectsState extends State<CreateProjects> {
                                   child: Center(
                                     child: Text(AppStrings.createProjects,style: TextStyle(color: AppColors.whiteColor,fontSize: AppTextSize.BODY_LARGE_14,fontWeight: FontWeight.w500),),
                                   ),
-                                  
+
                                 )
                               ],
                             ),
@@ -203,5 +203,5 @@ class _CreateProjectsState extends State<CreateProjects> {
         )
     );
   }
-  }
+}
 
