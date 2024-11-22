@@ -4,7 +4,7 @@
             "outputFile": "com.example.oddo_fe.app-mergeDebugResources-33:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/apple/Documents/GitHub/odoo_github/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/appletw/Documents/GitHub/odoo_github/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

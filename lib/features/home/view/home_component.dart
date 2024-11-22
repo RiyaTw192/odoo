@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:oddo_fe/features/project/view/Project_home_screen.dart';
 import 'package:oddo_fe/features/setting/view/setting_screen.dart';
 import '../../../config/theme/app_theme/theme_bloc.dart';
 import '../../../config/theme/app_theme/theme_state.dart';
@@ -14,7 +15,9 @@ import '../../../core/constants/custom_widgets/custom_tabBar_widget.dart';
 
 class HomeComponent extends StatefulWidget {
   int? index;
-   HomeComponent({super.key,this.index});
+  String? title;
+  Function()? onTap;
+   HomeComponent({super.key,this.index,this.title,this.onTap});
 
   @override
   State<HomeComponent> createState() => _HomeComponentState();
@@ -37,11 +40,10 @@ class _HomeComponentState extends State<HomeComponent> {
                     child: Column(
                       children: [
                         CustomAppBar(
-                          title: AppStrings.timeSheets,
+                          title: widget.title,
                           icon: Icons.add,
-                          iconOnTap: (){
-                            context.go('/createTimer');
-                          },
+                          iconOnTap: widget.onTap,
+
                         ),
                         const SizedBox(
                           height: AppDimen.SIZE_20,
@@ -80,7 +82,7 @@ class _HomeComponentState extends State<HomeComponent> {
               ),
             );
           case 1:
-            return const Center(child: Text('Projects Screen'));
+            return const ProjectHomeScreen();
           case 2:
             return const SettingScreen();
           default:
