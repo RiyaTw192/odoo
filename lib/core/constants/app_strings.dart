@@ -46,6 +46,11 @@ class AppStrings {
   static const String oK = 'OK';
   static const String fillAllFields = 'Please fill in all fields!';
 
+  //Create Project Screen
+  static const String name = 'Name';
+  static const String color = 'Color';
+  static const String createProjects = 'Create Projects';
+
 
 
 

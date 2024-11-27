@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:oddo_fe/config/theme/app_theme/theme.dart';
 import 'package:oddo_fe/core/constants/app_colors.dart';
 import 'package:oddo_fe/core/constants/app_dimen.dart';
@@ -20,7 +21,9 @@ class CustomAppBar extends StatelessWidget {
       children: [
         if (leadingIcon != null)
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
             icon: Icon(
               leadingIcon,
               size: AppDimen.SIZE_30,
