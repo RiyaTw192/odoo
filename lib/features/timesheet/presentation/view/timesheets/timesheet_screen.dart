@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:oddo_fe/core/constants/app_colors.dart';
 import 'package:oddo_fe/core/constants/app_dimen.dart';
 import 'package:oddo_fe/core/constants/app_strings.dart';
@@ -31,7 +32,9 @@ class TimesheetScreen extends StatelessWidget {
             builder: (context, state) {
               BottomNavCubit cubit = BottomNavCubit.get(context);
               return Scaffold(
-                body: HomeComponent(index: cubit.state.selectedIndex ),
+                body: HomeComponent(index: cubit.state.selectedIndex, title: AppStrings.timeSheets,onTap:(){
+                  context.go('/createTimer');
+                } , ),
                 bottomNavigationBar: BottomNavigationBar(
                   backgroundColor: isLightTheme
                       ? AppColors.gradient2

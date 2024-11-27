@@ -60,15 +60,15 @@ class AppThemes {
     fontWeight: FontWeight.w700,
   );
 
-  static TextStyle nameTextStyle = const TextStyle(
+  static TextStyle nameTextStyle = TextStyle(
     fontSize: AppDimen.SIZE_24,
-    color: AppColors.primaryColor,
+    color: AppColors.whiteColor,
     fontWeight: FontWeight.w700,
   );
 
-  static const TextStyle nameTextStyle16 = TextStyle(
+  static  TextStyle nameTextStyle16 = TextStyle(
     fontSize: AppDimen.SIZE_16,
-    color: AppColors.primaryColor,
+    color: AppColors.whiteColor,
     fontWeight: FontWeight.w400,
   );
 }
